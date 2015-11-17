@@ -16,28 +16,17 @@ body{
     position:absolute;
     top: 50%;
     left: 50%;
+    border: 1px solid red;
     transform: translate3d(-50%, -50%, 0);
     box-sizing: border-box;
 }
 
-.container .title{
-    position:absolute;
-    top: 30%;
-    left:0;
-    width:100%;
-    font-size: 70px;
-    transform: translate3d(0,-50%,0);
-    text-align: center;
-}
-
-.container .info{
+.container .demo{
     position: absolute;
-    right:0;
-    top:50%;
-}
-
-.container label{
-    width:80px;
-    text-align: right;
-    display:inline-block;
+    border: 1px solid #ddd;
+    width: 40%;
+    height: 40%;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%,-50%,0);
 }
