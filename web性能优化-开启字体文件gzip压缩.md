@@ -1,5 +1,5 @@
 # 移动端前端开发优化分享
-## 字体部分优化
+## 字体类别
 ### TrueType (.ttf)
 　　`Windows` 和 `Mac` 系统最常用的字体格式，其最大的特点就是它是由一种数学模式来进行定义的基于轮廓技术的字体，这使得它们比基于矢量的字体更容易处理，保证了屏幕与打印输出的一致性。同时，这类字体和矢量字体一样可以随意缩放、旋转而不必担心会出现锯齿。
 
@@ -15,6 +15,8 @@
 ### SVG (Scalable Vector Graphics) Fonts (.svg)
 　　顾名思义，就是使用 `SVG` 技术来呈现字体，还有一种 `gzip` 压缩格式的 `SVG` 字体 `.svgz` 。`SVG` 可缩放矢量图形`（Scalable Vector Graphics）` 是基于可扩展标记语言 `(XML)`，用于描述二维矢量图形的一种图形格式。`SVG` 由W3C制定，是一个开放标准。SVG严格遵从XML语法，并用文本格式的描述性语言来描述图像内容，因此是一种和图像分辨率无关的矢量图形格式。SVG可以使你设计的网页可以更加精彩细致，使用简单的文本命令，SVG可实现色彩线性变化、路径、自定义字体、透明效果、滤镜效果等各式常见的图形图像效果。
 
+<!--more-->
+
 ## 字体文件在服务器端开启gzip压缩
 
 #### 什么是 `GZIP` 压缩
@@ -28,43 +30,43 @@ GZIP压缩的比率往往在3倍到10倍。
 
 #### 浏览器对 `@font-face` Web fonts 的支持情况:
 
-<img src="./images/font-support.png" width="100%">
+<img src="images/font-support.png" width="100%">
 
 
 <br><br>
 #### ttf/otf 浏览器支持情况
 
-<img src="./images/ttf-font.png" width="100%">
+<img src="images/ttf-font.png" width="100%">
 
 <br><br>
 #### woff 浏览器支持情况
 
-<img src="./images/woff-font.png" width="100%">
+<img src="images/woff-font.png" width="100%">
 
 <br><br>
 #### svg 浏览器支持情况
 
-<img src="./images/svg-font.png" width="100%">
+<img src="images/svg-font.png" width="100%">
 
 <br><br>
 #### eot IE 特有支持
 
-<img src="./images/eot-font.png" width="100%">
-
-
+<img src="images/eot-font.png" width="100%">
 
 
 **字体文件对应的 minetype **   
 
 	- application/font-woff 	woff  
-	- application/font-sfntotf 	ttf
+	- application/font-sfnt 	ttf
 	- application/vnd.ms-fontobject		eot
 	- image/svg+xml		svg svgz
 
 
 以 [m.meizu.com](m.meizu.com) 网站中 `KaiGenGothicCN-Light.woff` 字体文件为例
 
-开启前字体文件大小为 `311kb`，开启后 `223kb`，相比开启前压缩了 `30%` 左右
+开启前字体文件大小为 `311kb`，开启后 `223kb`，相比开启前压缩了 `30%` 左右，如下图
+
+<img src="images/font-compare.jpg" width="100%">
 
 ### 步骤一：登录远程服务器
 
@@ -75,7 +77,7 @@ GZIP压缩的比率往往在3倍到10倍。
 打开配置文件，添加如下几个配置项: 
    
 	application/font-woff 	woff  
-	application/font-sfntotf 	ttf
+	application/font-sfnt 	ttf
 	application/vnd.ms-fontobject		eot
 	image/svg+xml		svg svgz
 
